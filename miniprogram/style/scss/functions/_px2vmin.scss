@@ -1,0 +1,9 @@
+@use 'sass:math';
+@use './_constants.scss' as *;
+
+/**
+  px转vmin
+*/
+@function px2vmin($px) {
+  @return math.div($px, $vw_base) * 100vmin;
+}

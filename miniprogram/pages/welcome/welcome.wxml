@@ -1,0 +1,22 @@
+<!-- <page-meta>
+  <custom-navigation-bar
+    back
+    background="#fff"
+  ></custom-navigation-bar>
+</page-meta> -->
+
+<page-content background-image-type="primary">
+  <view class="welcome-content">
+    <view class="experience-btn-wrapper">
+      <van-button
+        block
+        round
+        type="info"
+        size="large"
+        open-type="getPhoneNumber|agreePrivacyAuthorization"
+        bindgetphonenumber="handleGetPhoneNumber"
+        bindagreeprivacyauthorization="handleAgreePrivacyAuthorization"
+      >立即体验</van-button>
+    </view>
+  </view>
+</page-content>

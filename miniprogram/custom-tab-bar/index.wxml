@@ -1,0 +1,31 @@
+<view
+  class="tab-bar"
+  hidden="{{hidden}}"
+>
+  <van-tabbar
+    active="{{selected}}"
+    active-color="{{selectedColor}}"
+    inactive-color="{{color}}"
+    bind:change="switchTab"
+  >
+    <van-tabbar-item
+      wx:for="{{list}}"
+      wx:key="index"
+    >
+      <!-- <image slot="icon" mode="aspectFit" class="img-item" src="{{item.iconPath}}"></image>
+      <image slot="icon-active" mode="aspectFit" class="img-item" src="{{ item.selectedIconPath }}" /> -->
+      <van-icon
+        slot="icon"
+        class="img-item"
+        name="{{item.iconName}}"
+      />
+      <van-icon
+        slot="icon-active"
+        class="img-item"
+        name="{{item.iconName}}"
+        color="#3E62ED"
+      />
+      <text class="text-item">{{item.text}}</text>
+    </van-tabbar-item>
+  </van-tabbar>
+</view>

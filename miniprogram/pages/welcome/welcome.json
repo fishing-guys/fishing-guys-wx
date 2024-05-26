@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "custom-navigation-bar": "/components/custom-navigation-bar/custom-navigation-bar",
+    "page-content": "/components/page-content/page-content",
+    "van-button": "@vant/weapp/button/index"
+  }
+}

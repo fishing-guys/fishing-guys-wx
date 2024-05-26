@@ -1,0 +1,23 @@
+{
+  "name": "fishing-guys-miniprogram",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "vant:px2rpx": "gulp --gulpfile script/gulpfile.vant.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "@vant/weapp": "^1.11.2"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "miniprogram-api-typings": "^3.12.2",
+    "postcss-px2units": "^0.2.0",
+    "sass": "^1.69.7"
+  }
+}

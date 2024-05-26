@@ -1,0 +1,25 @@
+{
+  "tabWidth": 2,
+  "formatOnSave": true,
+  "bracketSameLine": true,
+  "overrides": [
+    {
+      "files": "*.wxml",
+      "options": {
+        "parser": "html"
+      }
+    },
+    {
+      "files": "*.wxss",
+      "options": {
+        "parser": "css"
+      }
+    },
+    {
+      "files": "*.wxs",
+      "options": {
+        "parser": "babel"
+      }
+    }
+  ]
+}

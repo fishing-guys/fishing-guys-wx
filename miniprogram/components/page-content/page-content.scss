@@ -1,0 +1,37 @@
+@use '../../style/scss/_functions.scss' as *;
+@use '../../style/scss/_vars' as *;
+
+.page-content-wrapper {
+  position: relative;
+  background-color: #f3f3f3;
+  /** navbar 开启placeholder 则不需要padding占位*/
+  padding-top: var(--top-occupied-height, 0px);
+
+  .page-content-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .page-content {
+    position: relative;
+
+    &.page-content-height {
+      height: calc(100vh - var(--top-occupied-height, 0px));
+      height: calc(100vh - var(--top-occupied-height, 0px));
+    }
+
+    &.page-content-height-has-bottom-tab {
+      height: calc(
+        100vh - var(--top-occupied-height, 0px) - #{$tabBarHeightVmin}
+      );
+      height: calc(
+        100vh - var(--top-occupied-height, 0px) - #{$tabBarHeightVmin} - constant(safe-area-inset-bottom)
+      ); /** IOS < 11.2 */
+      height: calc(
+        100vh - var(--top-occupied-height, 0px) - #{$tabBarHeightVmin} - env(safe-area-inset-bottom)
+      ); /** IOS > 11.2 */
+    }
+  }
+}

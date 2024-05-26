@@ -1,0 +1,19 @@
+page {
+  /** van-button */
+  --button-border-radius: 8px;
+  .van-button--mini {
+    --button-border-radius: 2px;
+  }
+  --button-default-height: 46px;
+  --button-normal-font-size: 16px;
+  --button-info-background-color: skyblue;
+  --button-info-border-color: skyblue;
+
+  /** van-checkbox */
+  --checkbox-checked-icon-color: skyblue;
+  --checkbox-label-margin: 0;
+
+  /** van-search */
+  --search-padding: 0;
+  --search-background-color: #fff;
+}

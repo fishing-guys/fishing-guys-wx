@@ -1,0 +1,14 @@
+{
+  "pages": ["pages/logs/logs", "pages/welcome/welcome"],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom",
+    "backgroundColor": "#f3f3f3"
+  },
+  "resolveAlias": {
+    "@/*": "/*"
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

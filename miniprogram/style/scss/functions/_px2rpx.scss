@@ -1,0 +1,40 @@
+@use 'sass:math';
+@use './_constants.scss' as *;
+
+/**
+  1px对应多少rpx
+  规定屏幕宽为750rpx
+  iPhone6: 750rpx = 375px = 750物理像素
+  假如设计稿宽度(像素) 375 当前值等于: 750/375 = 2 （1px = 2rpx = 2物理像素）
+  典型手机的px与rpx对应关系: https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html#%E5%B0%BA%E5%AF%B8%E5%8D%95%E4%BD%8D
+*/
+$multiple: math.div(750, $vw_base);
+
+/**
+  转换函数 (15) ==> 30rpx (15,30) ==> 30rpx 60rpx
+  转换函数 params 可传参数 无上限
+
+  使用
+  .title {
+      width: px2rpx(375); // width:750rpx;
+      height: px2rpx(10); // height:20rpx;
+      padding:px2rpx(10,20,30,40); // padding:20rpx 40rpx 60rpx 80rpx;
+      box-shadow: px2rpx(0,1,16) rgba(56, 56, 71, 0.2); // box-shadow: 0 2rpx 16rpx rgba(56, 56, 71, 0.2);
+  }
+*/
+@function px2rpx($t...) {
+  $i: 1;
+  $result: 0;
+
+  @while $i <= length($t) {
+    @if ($i ==1) {
+      $result: (nth($t, $i) * $multiple);
+    } @else {
+      $result: append($result, (nth($t, $i) * $multiple));
+    }
+
+    $i: $i + 1;
+  }
+
+  @return #{$result}rpx;
+}

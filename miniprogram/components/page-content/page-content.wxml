@@ -1,0 +1,14 @@
+<view
+  class="page-content-wrapper"
+  style="{{displayStyle}}"
+>
+  <image
+    wx:if="{{!!backgroundImageSrc}}"
+    class="page-content-bg"
+    src="{{backgroundImageSrc}}"
+    mode="widthFix"
+  />
+  <view class="page-content {{dispalyClass}}">
+    <slot></slot>
+  </view>
+</view>

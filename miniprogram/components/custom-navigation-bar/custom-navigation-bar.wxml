@@ -1,0 +1,48 @@
+<view
+  class="custom-navigation-bar {{fixed ? 'custom-navigation-bar-fixed' : ''}}"
+  style="{{displayStyle}}"
+>
+  <image
+    wx:if="{{!!backgroundImageSrc}}"
+    class="custom-navigation-bar-bg"
+    src="{{backgroundImageSrc}}"
+    mode="scaleToFill"
+  />
+  <view
+    wx:if="{{ fixed && placeholder }}"
+    class="custom-navigation-bar-placeholder"
+  />
+  <view
+    class="custom-navigation-bar-content"
+    style="{{displayCustomStyle}}"
+  >
+    <view class="custom-navigation-bar-left">
+      <view
+        wx:if="{{back}}"
+        class="custom-navigation-bar-btn"
+        bind:tap="onBack"
+        aria-role="button"
+        aria-label="返回"
+      >
+        <van-icon
+          name="arrow-left"
+          class="custom-navigation-bar-arrow"
+        />
+      </view>
+      <slot name="left" />
+      <view class="custom-navigation-bar-capsule">
+        <slot name="capsule" />
+      </view>
+    </view>
+    <view class="custom-navigation-bar-center">
+      <view
+        wx:if="{{ title }}"
+        class="custom-navigation-bar-center-title"
+      >{{ title }}</view>
+      <slot
+        wx:else
+        name="title"
+      />
+    </view>
+  </view>
+</view>

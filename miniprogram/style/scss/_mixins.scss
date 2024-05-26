@@ -1,0 +1,16 @@
+@use './_functions.scss' as *;
+
+/**
+  使用方式:
+  .demo {
+    @include safetyBottomHeight(60);
+  }
+*/
+@mixin safetyBottomHeight($heightPx) {
+  box-sizing: border-box;
+  height: px2vmin($heightPx);
+  height: calc(#{px2vmin($heightPx)} + constant(safe-area-inset-bottom));
+  height: calc(#{px2vmin($heightPx)} + env(safe-area-inset-bottom));
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}

@@ -1,0 +1,114 @@
+/**
+ * 胶囊按钮是原生组件 其单位在各种手机中都为px
+ * 所以自定义导航栏的单位都必需是px 才能适配
+ */
+
+.custom-navigation-bar {
+  position: relative;
+  width: 100%;
+  /** 层级需要高于page-content */
+  z-index: 1;
+
+  .custom-navigation-bar-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(var(--status-bar-height, 47px) + var(--nav-bar-height, 40px));
+  }
+
+  .custom-navigation-bar-placeholder {
+    width: 100%;
+    height: calc(var(--status-bar-height, 47px) + var(--nav-bar-height, 40px));
+  }
+
+  &.custom-navigation-bar-fixed {
+    .custom-navigation-bar-content {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .custom-navigation-bar-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: var(--nav-bar-height, 40px);
+    width: calc(100% - var(--menu-button-occupied-width, 0));
+    padding-right: var(--menu-button-occupied-width, 0);
+    padding-top: var(--status-bar-height, 47px);
+
+    .custom-navigation-bar-left {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      margin-left: 16px;
+
+      .custom-navigation-bar-btn {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        .custom-navigation-bar-arrow {
+          font-size: 18px;
+        }
+      }
+
+      .custom-navigation-bar-capsule {
+        position: relative;
+        box-sizing: border-box;
+        height: var(--menu-button-height);
+        display: flex;
+        align-items: center;
+
+        &::before {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          left: 0;
+          width: 200%;
+          height: 200%;
+          transform: scale(0.5);
+          transform-origin: 0 0;
+          box-sizing: border-box;
+          border-radius: var(--menu-button-height);
+          border: 2px solid #979797;
+        }
+
+        &:empty {
+          display: none;
+        }
+      }
+    }
+
+    .custom-navigation-bar-center {
+      background-color: red;
+      position: absolute;
+      bottom: 0;
+      left: var(--menu-button-occupied-width, 0);
+      height: var(--nav-bar-height, 40px);
+      line-height: var(--nav-bar-height, 40px);
+      width: calc(100% - var(--menu-button-occupied-width, 0) * 2);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:empty {
+        display: none;
+      }
+
+      .custom-navigation-bar-center-title {
+        font-size: 17px;
+        font-weight: 600;
+        color: #333;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@use '../app.scss';
+@use '../style/scss/_vars.scss' as *;
+@use '../style/scss/_functions.scss' as *;
+
+.tab-bar {
+  --tabbar-background-color: #f3f3f3;
+  --tabbar-item-margin-bottom: 0;
+  --tabbar-height: #{$tabBarHeightVmin};
+  --tabbar-text-item-height: #{px2vmin(20)};
+  --tabbar-img-item-height: calc(var(--tabbar-height) - #{px2vmin(20)});
+
+  height: var(--tabbar-height);
+  height: calc(var(--tabbar-height) + constant(safe-area-inset-bottom));
+  height: calc(var(--tabbar-height) + env(safe-area-inset-bottom));
+
+  .img-item {
+    width: px2vmin(40);
+    height: var(--tabbar-img-item-height);
+  }
+
+  .text-item {
+    height: var(--tabbar-text-item-height);
+  }
+}
